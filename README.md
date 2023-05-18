@@ -1,6 +1,20 @@
 # myCloudPan
 简易网盘项目，可以上传下载文件修改删除文件,可以增删改查文件夹，也可以通过分享链接给别人下载文件或者文件夹。
 
+
+
+
+
+
+效果：
+
+![image-20230518194444931](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230518194444931.png)
+
+
+
+![image-20230518194457449](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230518194457449.png)
+
+
 部署：项目中使用了自己做的一个工具库starter，已经放在项目的mystarter文件夹下，项目涉及到的sql在sql文件夹下
 如果你要启动项目的话需要使用
 
