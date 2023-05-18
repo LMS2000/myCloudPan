@@ -4,43 +4,6 @@
 需求是每个用户都有自己独立的存储空间可以存储文件下载文件，创建文件夹，修改文件或文件夹名字，删除文件或者文件夹
 
 
-根据需求设计了初步的表：
-
-DROP TABLE IF EXISTS `User`;
-CREATE TABLE User (
-  user_id INT(11) PRIMARY KEY AUTO_INCREMENT  COMMENT 'id',
-  username VARCHAR(50)  COMMENT '用户名',
-  password VARCHAR(50) COMMENT '密码',
-  email VARCHAR(50) COMMENT '邮箱',
-  is_enable tinyint(1) DEFAULT 0 COMMENT '是否可用',
-  use_quota bigint(11) COMMENT '使用情况',
-  quota bigint(11) COMMENT '总容量',
-  create_time datetime  COMMENT '创建时间',
-  update_time datetime  COMMENT '修改时间'
-)ENGINE = InnoDB  COMMENT = '用户表' ;
-DROP TABLE IF EXISTS `Folder`;
-CREATE TABLE Folder (
-  folder_id INT(11) PRIMARY KEY AUTO_INCREMENT COMMENT 'id',
-  folder_name VARCHAR(50) NOT NULL COMMENT '文件夹名称',
-  parent_folder int(11) NOT NULL COMMENT '父级文件夹id',
-  user_id int(11) NOT NULL COMMENT '所属用户',
-  size bigint(20) DEFAULT COMMENT '文件夹大小',
-  create_time datetime  COMMENT '创建时间',
-  update_time datetime  COMMENT '修改时间'
-) ENGINE = InnoDB  COMMENT = '文件夹表';
-DROP TABLE IF EXISTS `File`;
-CREATE TABLE File (
-  file_id INT(11) PRIMARY KEY AUTO_INCREMENT  COMMENT 'id' ,
-  file_name VARCHAR(50)  COMMENT '文件名',
-  file_type VARCHAR(50)  COMMENT '文件类型',
-  file_path VARCHAR(255)  COMMENT '文件路径',
-  file_url VARCHAR(255) COMMENT '文件url',
-  size BIGINT(11)  COMMENT '文件大小',
-  create_time datetime  COMMENT '创建时间',
-  update_time datetime  COMMENT '修改时间',
-  user_id INT(11)  COMMENT '所属用户',
-  folder_id INT(11)  COMMENT '所属文件夹'
-) ENGINE = InnoDB  COMMENT = '文件表';
 关于文件夹表和文件表：
 文件夹是虚拟路径，没有实际创建
 文件存储的实际路径是根据用户bucket桶跟日期存放路径。主要目的是解决上传重复文件的问题
