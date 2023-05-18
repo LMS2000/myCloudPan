@@ -11,6 +11,7 @@ mvn install:install-file -Dfile=lms-utils-1.0-SNAPSHOT.jar -Dmaven.repo.local=D:
 在jar包所在路径下使用这条命令
 其中-Dmaven.repo.local指定你的maven本地仓库路径，
 
+另外前端修改需要在.env.development修改你的后端地址
 
 需求是每个用户都有自己独立的存储空间可以存储文件下载文件，创建文件夹，修改文件或文件夹名字，删除文件或者文件夹
 
