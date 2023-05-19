@@ -12,7 +12,7 @@
 ![image-20230518194457449](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230518194457449.png)
 
 
-部署：项目中使用了自己做的一个工具库starter，已经放在项目的mystarter文件夹下，项目涉及到的sql在sql文件夹下
+部署：项目中使用了自己做的一个工具库starter，就是项目中的lms-utils-1.0-SNAPSHOT.jar，项目涉及到的sql在sql文件夹下
 如果你要启动项目的话需要使用
 
 ```
